@@ -10,6 +10,10 @@ const FooterContainer = styled.footer`
   background: #000;
   padding: 2rem 0;
   margin-top: 5rem;
+  @media (max-width: 400px) {
+    padding: 1rem 0;
+    margin-top: 3rem;
+  }
 `
 
 const FooterSocials = styled.div`
@@ -35,8 +39,7 @@ const Logo = styled.div`
   height: 150px;
   width: 150px;
   @media (max-width: 400px) {
-    height: 50px;
-    width: 50px;
+    display: none;
   }
 `
 
