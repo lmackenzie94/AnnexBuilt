@@ -1,6 +1,15 @@
 import React from "react"
 import { useStaticQuery, graphql } from "gatsby"
 import Img from "gatsby-image"
+import styled from "styled-components"
+import { Box } from "rebass"
+
+const GalleryContainer = styled.section`
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: -10px;
+`
 
 function Gallery() {
   const data = useStaticQuery(graphql`
@@ -46,17 +55,17 @@ function Gallery() {
   const arrayData = Object.values(data)
 
   return (
-    <div style={{ display: `flex`, flexWrap: `wrap` }}>
+    <GalleryContainer>
       {arrayData.map(img => (
-        <div style={{ width: `100%` }}>
-          <Img
-            fluid={img.childImageSharp.fluid}
-            alt=""
-            style={{ maxWidth: `400px` }}
-          />
-        </div>
+        <Box
+          as={Img}
+          fluid={img.childImageSharp.fluid}
+          alt=""
+          width={[`100%`, `100%`, `75%`, `calc(50% - 20px)`]}
+          css={{ display: `inline-block`, margin: `10px`, maxHeight: `400px` }}
+        />
       ))}
-    </div>
+    </GalleryContainer>
   )
 }
 

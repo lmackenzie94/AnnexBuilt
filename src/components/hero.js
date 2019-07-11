@@ -14,7 +14,7 @@ const HeroText = styled.p`
   width: 60%;
   color: #999;
   margin: 2rem 0;
-  @media (max-width: 400px) {
+  @media (max-width: 831px) {
     width: 100%;
   }
 `

@@ -29,7 +29,6 @@ const FooterIcon = styled(FontAwesomeIcon)`
   transition: all 0.3s linear;
   &:hover {
     color: #fff93d;
-    transform: scale(1.2);
   }
   @media (max-width: 400px) {
     font-size: 1.2rem;
@@ -46,10 +45,10 @@ const Logo = styled.div`
 function Footer() {
   return (
     <FooterContainer>
-      <Container style={{ display: `flex`, justifyContent: `space-between` }}>
-        <Logo>
+      <Container style={{ display: `flex`, justifyContent: `center` }}>
+        {/* <Logo>
           <img src={LogoImage} />
-        </Logo>
+        </Logo> */}
         <FooterSocials>
           <FooterIcon icon={faFacebookF} />
           <FooterIcon icon={faInstagram} />
