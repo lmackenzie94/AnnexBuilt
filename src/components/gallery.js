@@ -1,48 +1,60 @@
-import React, { useState } from "react"
-import styled from "styled-components"
-import Logo from "../images/logo.png"
-import GalleryItem from "./galleryItem"
-
-const GalleryButton = styled.button`
-  margin: 0;
-  margin-right: 1.5rem;
-  padding: 3px;
-  transition: all 0.3s linear;
-  font-size: 0.8rem;
-  text-transform: uppercase;
-  background: none;
-  outline: none;
-  border: none;
-  background: ${props => (props.active ? `#fff93d` : `none`)};
-  &:hover {
-    background: #fff93d;
-    cursor: pointer;
-  }
-`
-
-const GalleryContainer = styled.section`
-  display: flex;
-  margin: 1rem -5px;
-  flex-wrap: wrap;
-`
+import React from "react"
+import { useStaticQuery, graphql } from "gatsby"
+import Img from "gatsby-image"
 
 function Gallery() {
-  const images = [
-    { src: Logo, title: "Image 1" },
-    { src: Logo, title: "Image 2" },
-  ]
+  const data = useStaticQuery(graphql`
+    query ImageQuery {
+      image1: file(relativePath: { eq: "image1.jpg" }) {
+        childImageSharp {
+          fluid {
+            ...GatsbyImageSharpFluid
+          }
+        }
+      }
+      image2: file(relativePath: { eq: "image2.jpg" }) {
+        childImageSharp {
+          fluid {
+            ...GatsbyImageSharpFluid
+          }
+        }
+      }
+      image3: file(relativePath: { eq: "image3.jpg" }) {
+        childImageSharp {
+          fluid {
+            ...GatsbyImageSharpFluid
+          }
+        }
+      }
+      image4: file(relativePath: { eq: "image4.jpg" }) {
+        childImageSharp {
+          fluid {
+            ...GatsbyImageSharpFluid
+          }
+        }
+      }
+      image5: file(relativePath: { eq: "image5.jpg" }) {
+        childImageSharp {
+          fluid {
+            ...GatsbyImageSharpFluid
+          }
+        }
+      }
+    }
+  `)
+
+  const arrayData = Object.values(data)
 
   return (
-    <>
-      <GalleryButton active>All</GalleryButton>
-      <GalleryButton>Tables</GalleryButton>
-      <GalleryButton>Chairs</GalleryButton>
-      <GalleryContainer>
-        {images.map(image => (
-          <GalleryItem image={image} />
-        ))}
-      </GalleryContainer>
-    </>
+    <div>
+      {arrayData.map(img => (
+        <Img
+          fluid={img.childImageSharp.fluid}
+          alt=""
+          style={{ maxWidth: `600px` }}
+        />
+      ))}
+    </div>
   )
 }
 
