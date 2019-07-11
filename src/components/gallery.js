@@ -46,13 +46,15 @@ function Gallery() {
   const arrayData = Object.values(data)
 
   return (
-    <div>
+    <div style={{ display: `flex`, flexWrap: `wrap` }}>
       {arrayData.map(img => (
-        <Img
-          fluid={img.childImageSharp.fluid}
-          alt=""
-          style={{ maxWidth: `600px` }}
-        />
+        <div style={{ width: `100%` }}>
+          <Img
+            fluid={img.childImageSharp.fluid}
+            alt=""
+            style={{ maxWidth: `400px` }}
+          />
+        </div>
       ))}
     </div>
   )

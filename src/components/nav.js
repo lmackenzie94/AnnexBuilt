@@ -28,6 +28,9 @@ const NavLink = styled.a`
   color: #000;
   font-size: 0.8rem;
   text-transform: uppercase;
+  @media (max-width: 400px) {
+    font-size: 0.7rem;
+  }
 `
 
 const Nav = () => {

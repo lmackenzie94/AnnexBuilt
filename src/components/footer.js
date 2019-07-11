@@ -27,10 +27,17 @@ const FooterIcon = styled(FontAwesomeIcon)`
     color: #fff93d;
     transform: scale(1.2);
   }
+  @media (max-width: 400px) {
+    font-size: 1.2rem;
+  }
 `
 const Logo = styled.div`
   height: 150px;
   width: 150px;
+  @media (max-width: 400px) {
+    height: 50px;
+    width: 50px;
+  }
 `
 
 function Footer() {

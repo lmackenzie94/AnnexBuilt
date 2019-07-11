@@ -19,6 +19,9 @@ const H1 = styled.h1`
   font-size: 1.1rem;
   font-family: Russo One;
   text-transform: uppercase;
+  @media (max-width: 400px) {
+    font-size: 0.9rem;
+  }
 `
 
 const Layout = ({ children }) => {
