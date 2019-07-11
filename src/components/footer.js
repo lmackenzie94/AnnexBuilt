@@ -9,7 +9,7 @@ import LogoImage from "../images/logo.png"
 const FooterContainer = styled.footer`
   background: #000;
   padding: 2rem 0;
-  margin-top: 5rem;
+  margin-top: 3rem;
   @media (max-width: 400px) {
     padding: 1rem 0;
     margin-top: 3rem;
@@ -22,11 +22,11 @@ const FooterSocials = styled.div`
   align-items: center;
 `
 
-const FooterIcon = styled(FontAwesomeIcon)`
+const SocialIcon = styled(FontAwesomeIcon)`
   color: #fff;
   font-size: 1.5rem;
-  margin-left: 2rem;
   transition: all 0.3s linear;
+  margin: 0 1rem;
   &:hover {
     color: #fff93d;
   }
@@ -50,9 +50,9 @@ function Footer() {
           <img src={LogoImage} />
         </Logo> */}
         <FooterSocials>
-          <FooterIcon icon={faFacebookF} />
-          <FooterIcon icon={faInstagram} />
-          <FooterIcon icon={faEnvelope} />
+          <SocialIcon icon={faFacebookF} />
+          <SocialIcon icon={faInstagram} />
+          <SocialIcon icon={faEnvelope} />
         </FooterSocials>
       </Container>
     </FooterContainer>
